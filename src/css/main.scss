@@ -12,18 +12,311 @@ $light: #FFF4F2;
 $red: #C70000;
 $black: #121212;
 
+$darkBlue:#052962;
+
 // Article
-@import "base";
-@import "header";
-@import "article-nav";
-@import "tributes";
-@import "tribute";
-@import "tribute-animation";
-@import "methodology";
-@import "meta";
-@import "g-footer";
-@import "g-onward";
-@import "app";
+// @import "base";
+// @import "header";
+// @import "article-nav";
+// @import "tributes";
+// @import "tribute";
+// @import "tribute-animation";
+// @import "methodology";
+// @import "meta";
+// @import "g-footer";
+// @import "g-onward";
+// @import "app";
+
+.bye-brits::before {
+    @include mq(desktop) {
+        content: '';
+        position: fixed;
+        background-image: url(https://uploads.guim.co.uk/2020/01/22/pencil-line--1.png);
+        background-size: cover;
+        background-repeat: repeat;
+        width: 29px;
+        height: 100vh;
+        top: 10px;
+        left: 136px;
+    }
+}
+.bye-brits::after {
+    @include mq(desktop){
+        content: '';
+        position: fixed;
+        background-image: url(https://uploads.guim.co.uk/2020/01/22/pencil-line--1.png);
+        background-size: cover;
+        background-repeat: repeat;
+        width: 29px;
+        height: 100vh;
+        top: 10px;
+        right: 235px;
+    }
+}
+
+.bye-brits {
+    color:#121212;
+    &__header {
+        width:100%;
+        background-color:$darkBlue;
+        position: sticky;
+        height:85vh;
+        top: -81vh;
+        z-index:10;
+        @include mq(mobileLandscape){
+            top: -79vh;
+        }
+        @include mq(desktop){
+            height:75vh;
+            top:-66vh;
+        }
+        @include mq(leftCol){
+            height:75vh;
+            top:-64vh;
+        }
+        @include mq(wide) {
+            height:70vh;
+            top: -58vh;
+        }
+        &__goodbye-brits {
+            font-family:"Guardian Titlepiece";
+            font-size:28px;
+            color:white;
+            text-align:right;
+            position: absolute;
+            bottom: -11px;
+            right: 8px;
+            @include mq(mobileMedium){
+                font-size:33px;
+                bottom:-12px;
+            }
+            @include mq(mobileLandscape){
+                font-size: 43px;
+                bottom: -15px;
+            }
+            @include mq(phablet){
+                font-size: 59px;
+                bottom: -21px;
+            }
+            @include mq(tablet) {
+                font-size: 67px;
+                bottom: -24px;
+            }
+            @include mq(desktop){
+                font-size:89px;
+                bottom:-33px;
+            }
+            @include mq(leftCol) {
+                font-size: 103px;
+                bottom: -38px;
+            }
+            @include mq(wide) {
+                font-size:118px;
+                bottom: -42px;
+                right: 12px;
+            }
+            span {
+                color:yellow;
+            }
+        }
+    }
+    &__headline {
+        font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
+        font-weight:400;
+        font-size:28px;
+        line-height:115%;
+        width: 260px;
+        margin-top: 20px;
+        margin-left: 12px;
+        @include mq(wide) {
+            font-size:58px;
+            width: 570px;
+            margin-top: 45px;
+            margin-left:180px;
+        }
+    }
+    &__byline {
+        margin-left: 12px;
+        margin-top: 12px;
+        font-size: 17px;
+        line-height: 115%;
+        width: 260px;
+        @include mq(wide) {
+            margin-left: 180px;
+            width: 460px; 
+        } 
+    }
+    &__nav {
+        position: sticky;
+        top: 130px;
+        z-index: 9;
+        margin-left: 0;
+        @include mq(mobileMedium){
+            padding-top: 20px;
+            padding-bottom: 9px;
+        }
+        @include mq(wide) {
+            width:860px;
+            background-color:#fff;
+            padding-top:20px;
+            padding-bottom:10px;
+            top: 108px;
+            margin-left: 178px;
+        }
+        &__dropbtn {
+            &::before {
+                content:"";
+                position: absolute;
+                background-image: url(https://uploads.guim.co.uk/2020/01/23/pencil-line--2-rotate.png);
+                background-size: cover;
+                background-repeat: repeat;
+                width: 875px;
+                height: 29px;
+                top: 23px;
+                left: -15px;
+                @include mq(mobileMedium){
+                    width: 383px;
+                    height: 16px;
+                    top: 9px;
+                    left: -12px;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                background-image: url(https://uploads.guim.co.uk/2020/01/23/pencil-line--2-rotate.png);
+                background-size: cover;
+                background-repeat: repeat;
+                width: 875px;
+                height: 29px;
+                top: 66px;
+                left: -15px;
+                @include mq(mobileMedium){
+                    width: 387px;
+                    height: 24px;
+                    top: 40px;
+                    left: -16px;
+                }
+            }
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: left;
+            width: 100%;
+            background-color: white;
+
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 24px;
+            border:none;
+            transition:transform 1s;
+            @include mq(wide) {
+                width:860px;
+            }
+            span {
+                margin-top:1px;
+            }
+            &:hover span {
+                transform:translateY(3px);
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        &__dropdown {
+            display:flex;
+            flex-direction:column;
+            display:none;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-left: 12px;
+        margin-top:36px;
+        @include mq(wide) {
+            margin-left: 180px;
+        }
+        &__image {
+            filter: grayscale(100%);
+            width: 100%;
+            height: auto;
+            min-height:200px;
+            background-image:url(https://media.guim.co.uk/77378756d65206ec228ce5eb02ec2fb014e956c2/1198_0_4792_4792/2000.jpg);
+            background-size:cover;
+            background-repeat:no-repeat;
+            @include mq(wide){
+                width:300px;
+                height:auto;
+            }
+        }
+        &__country {
+            h5 {
+                font-size:20px;
+                line-height:115%;
+            }
+        }
+        &__name {
+            h3 {
+            font-size:36px;
+            font-weight:bold;
+            line-height:115%;
+            }
+        }
+        &__bio {
+            h4{
+                font-style: italic;
+            }
+        }
+        &__readmore {
+            display: flex;
+            width: 160px;
+            justify-content: flex-start;
+            border: 1px solid;
+            a {
+                font-family:"Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+                font-weight:bold;
+                color:#121212;
+                text-decoration:none;
+                margin-top: 1px;
+                margin-bottom: 6px;
+                padding-left: 12px;
+            }
+        }
+    }
+    // css grid
+    &__content {  
+        display: grid; 
+        grid-template-columns: calc(100vw - 24px); 
+        // grid-template-rows: repeat(2, 1fr) 200px 1fr 2fr 1fr; 
+        grid-template-rows:21px 1fr 200px 24px 2fr 30px;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+        
+        &__country { grid-area: 1 / 1 / 2 / 2; } 
+        &__name { grid-area: 2 / 1 / 3 / 2; } 
+        &__image { grid-area: 3 / 1 / 4 / 2; } 
+        &__bio { grid-area: 4 / 1 / 5 / 2; } 
+        &__text { grid-area: 5 / 1 / 6 / 2; } 
+        &__readmore { grid-area: 6 / 1 / 7 / 2; } 
+
+        @include mq(desktop){
+            grid-template-columns: 300px 20px 540px; 
+            grid-template-rows: 21px 40px 26px 24px 2fr 30px;; 
+            grid-column-gap: 0px;
+            grid-row-gap: 0px; 
+
+            &__image { grid-area: 1 / 1 / 7 / 2; } 
+            &__gap { grid-area: 1 / 2 / 7 / 3; } 
+            &__country { grid-area: 1 / 3 / 2 / 4; } 
+            &__name { grid-area: 2 / 3 / 3 / 4; } 
+            &__bio { grid-area: 3 / 3 / 4 / 4; } 
+            &__text { grid-area: 4 / 3 / 6 / 4; } 
+            &__readmore { grid-area: 6 / 3 / 7 / 4; } 
+        }
+    }         
+}
 
 .element-atom,
 .interactive-atom {
