@@ -232,23 +232,23 @@
 //   return n.replace(/\s+/g, '-').toLowerCase();
 // }
 
-// function loadJSON(path, success, error) {
-//   var xhr = new XMLHttpRequest();
-//   xhr.onreadystatechange = function () {
-//     if (xhr.readyState === XMLHttpRequest.DONE) {
-//       if (xhr.status === 200) {
-//         if (success)
-//           success(JSON.parse(xhr.responseText));
-//       } else {
-//         if (error) {
-//           error(xhr);
-//         }
-//       }
-//     }
-//   };
-//   xhr.open("GET", path, true);
-//   xhr.send();
-// }
+function loadJSON(path, success, error) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        if (success)
+          success(JSON.parse(xhr.responseText));
+      } else {
+        if (error) {
+          error(xhr);
+        }
+      }
+    }
+  };
+  xhr.open("GET", path, true);
+  xhr.send();
+}
 
 // function jsonUrl() {
 //   if (window.location.hostname == 'preview.gutools.co.uk') {
@@ -285,3 +285,55 @@ const loopLanguages = setInterval(() => {
     i++;
   }
 }, 2000)
+
+
+
+
+//handlebars
+const Handlebars = require("handlebars");
+
+
+
+
+loadJSON(jsonLink(), (data) => {
+  buildLetters (data.sheets)
+  buildNav(data.sheets)
+});
+
+function jsonLink() {
+  if (window.location.hostname == 'preview.gutools.co.uk') {
+    return "https://interactive.guim.co.uk/docsdata-test/1xAlScRGPBu85iRERmQKc1KSdFlBAha3fapivY1Nvbyg.json";
+  } else {
+    return "https://interactive.guim.co.uk/docsdata-test/1xAlScRGPBu85iRERmQKc1KSdFlBAha3fapivY1Nvbyg.json";
+  }
+}
+
+
+function buildLetters (data) {
+  const source = '{{#each Sheet1}}<section class="bye-brits__content"><div  class="bye-brits__content__country"><h5>{{Country}}</h5></div><div class="bye-brits__content__image"><img src="{{Image}}"></div><div class="bye-brits__content__gap"></div><div class="bye-brits__content__name"><h3>{{Name}}</h3></div><div class="bye-brits__content__bio"><h4>{{Bio}}</h4></div><div class="bye-brits__content__text"><p>{{Full}}</p></div><div class="bye-brits__content__readmore"><a>Read more</a></div></section>{{/each}}';
+  const template = Handlebars.compile(source);
+
+  const byeBrits = document.querySelector("#bye-brits")
+
+  var result = template(data);
+  byeBrits.innerHTML = result
+}
+
+function buildNav (data) {
+  const source = '{{#each Sheet1}}<div class="bye-brits__nav__dropdown-item"><a><span class="dropdown-country-tag">{{Country}} /</span> {{Name}}</a></div>{{/each}}';
+  const template = Handlebars.compile(source);
+  const byeBrits = document.querySelector("#dropdown-content")
+  var result = template(data);
+  byeBrits.innerHTML = result
+
+}
+
+
+
+
+
+
+
+
+
+

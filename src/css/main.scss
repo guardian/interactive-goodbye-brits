@@ -5,57 +5,28 @@
 // Uncomment for embeds
 //@import "embed";
 // Uncomment for full screen (including immersive article main media)
-//@import "fullscreen";
+// @import "fullscreen";
 
 // Palette
-$light: #FFF4F2;
-$red: #C70000;
 $black: #121212;
-
 $darkBlue:#052962;
+$secondaryBlue:#005689;
 
-// Article
-// @import "base";
-// @import "header";
-// @import "article-nav";
-// @import "tributes";
-// @import "tribute";
-// @import "tribute-animation";
-// @import "methodology";
-// @import "meta";
-// @import "g-footer";
-// @import "g-onward";
-// @import "app";
-
-.bye-brits::before {
-    @include mq(desktop) {
-        content: '';
-        position: fixed;
-        background-image: url(https://uploads.guim.co.uk/2020/01/22/pencil-line--1.png);
-        background-size: cover;
-        background-repeat: repeat;
-        width: 29px;
-        height: 100vh;
-        top: 10px;
-        left: 136px;
-    }
-}
-.bye-brits::after {
+.gs-container {
     @include mq(desktop){
-        content: '';
-        position: fixed;
-        background-image: url(https://uploads.guim.co.uk/2020/01/22/pencil-line--1.png);
-        background-size: cover;
-        background-repeat: repeat;
-        width: 29px;
-        height: 100vh;
-        top: 10px;
-        right: 235px;
+        border: 1px solid transparent;
+        border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 round stretch;
+        border-top:none;
+        border-bottom:none;
     }
+
+    // margin-top: -45px;
 }
+
 
 .bye-brits {
-    color:#121212;
+    overflow: hidden;
+    color:$black;
     &__header {
         width:100%;
         background-color:$darkBlue;
@@ -120,43 +91,67 @@ $darkBlue:#052962;
             }
         }
     }
+
     &__headline {
         font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
         font-weight:400;
         font-size:28px;
         line-height:115%;
-        width: 260px;
-        margin-top: 20px;
+        width: calc(100vw - 24px);
         margin-left: 12px;
-        @include mq(wide) {
-            font-size:58px;
-            width: 570px;
-            margin-top: 45px;
+        @include mq(tablet){
+            width: 610px;
+            margin-left: 20px;
+        }
+        @include mq(desktop) {
+            padding-top:42px;
+            font-size:36px;
+            width: 620px;
+            margin-left:100px;
+        }
+        @include mq(wide){
             margin-left:180px;
         }
     }
     &__byline {
         margin-left: 12px;
         margin-top: 12px;
-        font-size: 17px;
+        font-size: 15px;
         line-height: 115%;
-        width: 260px;
+        width: calc(100vw - 24px);
+        @include mq(tablet){
+            width: 610px;
+            margin-left: 20px;
+        }
+        @include mq(desktop){
+            margin-left:100px;
+            width: 620px; 
+        }
         @include mq(wide) {
             margin-left: 180px;
-            width: 460px; 
         } 
     }
     &__nav {
         position: sticky;
-        top: 130px;
+        padding-top:10px;
+        background-color: white;
+        top: 28px;
         z-index: 9;
-        margin-left: 0;
+        margin-left: 12px;
+        width:calc(100vw - 24px);
         @include mq(mobileMedium){
             padding-top: 20px;
             padding-bottom: 9px;
         }
-        @include mq(wide) {
+        @include mq(tablet){
+            margin-left: 20px;
+            width: calc(100vw - 40px);
+        }
+        @include mq(desktop){
+            margin-left:100px;
             width:860px;
+        }
+        @include mq(wide) {
             background-color:#fff;
             padding-top:20px;
             padding-bottom:10px;
@@ -164,85 +159,91 @@ $darkBlue:#052962;
             margin-left: 178px;
         }
         &__dropbtn {
-            &::before {
-                content:"";
-                position: absolute;
-                background-image: url(https://uploads.guim.co.uk/2020/01/23/pencil-line--2-rotate.png);
-                background-size: cover;
-                background-repeat: repeat;
-                width: 875px;
-                height: 29px;
-                top: 23px;
-                left: -15px;
-                @include mq(mobileMedium){
-                    width: 383px;
-                    height: 16px;
-                    top: 9px;
-                    left: -12px;
-                }
-            }
-            &::after {
-                content: "";
-                position: absolute;
-                background-image: url(https://uploads.guim.co.uk/2020/01/23/pencil-line--2-rotate.png);
-                background-size: cover;
-                background-repeat: repeat;
-                width: 875px;
-                height: 29px;
-                top: 66px;
-                left: -15px;
-                @include mq(mobileMedium){
-                    width: 387px;
-                    height: 24px;
-                    top: 40px;
-                    left: -16px;
-                }
-            }
-            font-family: sans-serif;
-            font-size: 15px;
+            border: 0.1em solid transparent;
+            border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 round stretch;
+            font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+            font-size: 17px;
             font-weight: 600;
             text-align: left;
-            width: 100%;
             background-color: white;
-
             display: flex;
             justify-content: space-between;
-
-            margin-top: 24px;
-            border:none;
-            transition:transform 1s;
+            padding:8px;
+            width:100%;
             @include mq(wide) {
                 width:860px;
             }
-            span {
+            &__text {
                 margin-top:1px;
             }
-            &:hover span {
+        }
+        &__dropbtn:hover {
+            &__downarrow{
                 transform:translateY(3px);
             }
-            &:hover {
-                text-decoration: underline;
+            &__text {
+                border-bottom:2px solid transparent;
+                border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 stretch;
             }
         }
-        &__dropdown {
+
+        &__dropdown-content {
             display:flex;
             flex-direction:column;
-            display:none;
+            width: calc(100vw - 24px);
+            @include mq(tablet){
+                width: calc(100vw - 40px);
+            }
+            @include mq(desktop){
+                width:860px;
+            }
+        }
+        &__dropdown-item {
+            border: 1px solid transparent;
+            border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 stretch;
+            border-top:none;
+            padding:8px;
+            background-color:white;
+            a {
+                text-decoration: none;
+                color: #121212;
+                font-size: 15px;
+                @include mq(mobileLandscape){
+                    font-size: 17px;
+                }
+                @include mq(tablet){
+                    font-size:20px;
+                }
+                span {
+                    font-weight: 600;
+                }
+            }
+        }
+        &__dropdown-item:hover {
+            a {
+                border-bottom:2px solid transparent;
+                border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 stretch;
+            }
         }
     }
+
+
     &__content {
+        margin-left: 12px;
         display: flex;
         flex-direction: column;
-        margin-left: 12px;
         margin-top:36px;
-        @include mq(wide) {
-            margin-left: 180px;
+        @include mq(desktop) {
+            margin-left:100px;
+        }
+        @include mq(wide){
+            margin-left:180px;
         }
         &__image {
             filter: grayscale(100%);
             width: 100%;
             height: auto;
-            min-height:200px;
+            max-height:200px;
             background-image:url(https://media.guim.co.uk/77378756d65206ec228ce5eb02ec2fb014e956c2/1198_0_4792_4792/2000.jpg);
             background-size:cover;
             background-repeat:no-repeat;
@@ -252,51 +253,64 @@ $darkBlue:#052962;
             }
         }
         &__country {
+            margin-top: -3px;
             h5 {
                 font-size:20px;
                 line-height:115%;
             }
         }
         &__name {
+            color:$secondaryBlue;
             h3 {
             font-size:36px;
             font-weight:bold;
-            line-height:115%;
+            line-height: 105%;
+            margin-top: 4px;
             }
         }
         &__bio {
+            margin-top:5px;
             h4{
                 font-style: italic;
             }
         }
         &__readmore {
+            
+            border: 1px solid transparent;
+            border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 round stretch;
             display: flex;
             width: 160px;
             justify-content: flex-start;
-            border: 1px solid;
             a {
+                color:$secondaryBlue;
                 font-family:"Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
                 font-weight:bold;
-                color:#121212;
                 text-decoration:none;
                 margin-top: 1px;
                 margin-bottom: 6px;
                 padding-left: 12px;
             }
         }
+        &__text {
+            margin-top: 5px;
+            p {
+                font-size:17px;
+                line-height:135%;
+            }
+        }
     }
     // css grid
     &__content {  
-        display: grid; 
+        display: grid;
         grid-template-columns: calc(100vw - 24px); 
         // grid-template-rows: repeat(2, 1fr) 200px 1fr 2fr 1fr; 
-        grid-template-rows:21px 1fr 200px 24px 2fr 30px;
+        grid-template-rows:21px 200px 0fr 24px 2fr 30px;
         grid-column-gap: 0px;
         grid-row-gap: 0px; 
         
         &__country { grid-area: 1 / 1 / 2 / 2; } 
-        &__name { grid-area: 2 / 1 / 3 / 2; } 
-        &__image { grid-area: 3 / 1 / 4 / 2; } 
+        &__image { grid-area: 2 / 1 / 3 / 2; } 
+        &__name { grid-area: 3 / 1 / 4 / 2; } 
         &__bio { grid-area: 4 / 1 / 5 / 2; } 
         &__text { grid-area: 5 / 1 / 6 / 2; } 
         &__readmore { grid-area: 6 / 1 / 7 / 2; } 
@@ -315,6 +329,10 @@ $darkBlue:#052962;
             &__text { grid-area: 4 / 3 / 6 / 4; } 
             &__readmore { grid-area: 6 / 3 / 7 / 4; } 
         }
+
+        &:nth-child(even) {
+            
+          }
     }         
 }
 
@@ -322,4 +340,5 @@ $darkBlue:#052962;
 .interactive-atom {
     margin: 0 !important;
 }
+
 
