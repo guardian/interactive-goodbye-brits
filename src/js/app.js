@@ -263,18 +263,40 @@ function loadJSON(path, success, error) {
 
 
 
-
 // change language on loop 
 const languages = [
-  'Do widzenia,', 
-  'Jää hyvästi,',
-  'Hejdå,',
-  'Au revoir,',
-  'Arrivederci,',
-  'Aποχαιρετισμός,',
-  'Ardievas,',
-  'Auf wiedersehen,'
+  'Hejdå', 
+  'Salut',
+  'Arrivederci',
+  'Dovijdane',
+  'Güle güle',
+  'Ardievas',
+  'Do videnia',
+  'La revedere',
+  'Tschüss',
+  'Adiós',
+  'Zbogom',
+  'Äddi',
+  'Auf wiedersehen',
+  'Doviđenja',
+  'Näkemiin',
+  'Aντιο σας',
+  'Viso gero',
+  'Do widzenia',
+  'Viszontlátásra',
+  'Adeus',
+  'Head aega',
+  'Au revoir',
+  'Vaarwel',
+  'Addiju',
+  'Slán',
+  'Farvel',
+  'Goodbye'
 ];
+
+// 'Slán agus beannacht'
+
+
 
 let i = 0;
 const loopLanguages = setInterval(() => {
@@ -284,16 +306,14 @@ const loopLanguages = setInterval(() => {
   } else {
     i++;
   }
-}, 2000)
+}, 1500)
+
 
 
 
 
 //handlebars
 const Handlebars = require("handlebars");
-
-
-
 
 loadJSON(jsonLink(), (data) => {
   buildLetters (data.sheets)
@@ -309,8 +329,16 @@ function jsonLink() {
 }
 
 
+Handlebars.registerHelper('breaklines', function(text) {
+  text = Handlebars.Utils.escapeExpression(text);
+  text = text.replace(/(\r\n|\n|\r)/gm, '</p><p>');
+  text = '<p>'+text+'</p>';
+  return new Handlebars.SafeString(text);
+});
+
+//spreadsheet populates content // add this for flag <img src="{{{Flag}}}">
 function buildLetters (data) {
-  const source = '{{#each Sheet1}}<section class="bye-brits__content"><div  class="bye-brits__content__country"><h5>{{Country}}</h5></div><div class="bye-brits__content__image"><img src="{{Image}}"></div><div class="bye-brits__content__gap"></div><div class="bye-brits__content__name"><h3>{{Name}}</h3></div><div class="bye-brits__content__bio"><h4>{{Bio}}</h4></div><div class="bye-brits__content__text"><p>{{Full}}</p></div><div class="bye-brits__content__readmore"><a>Read more</a></div></section>{{/each}}';
+  const source = '{{#each Sheet1}}{{breaklines description}}<section class="bye-brits__content scrolltome {{Country}}""><div  class="bye-brits__content__country"><h5>{{Country}}</h5></div><div class="bye-brits__content__image"><img src="{{Image}}"></div><div class="bye-brits__content__gap"></div><div class="bye-brits__content__name"><h3>{{Name}}</h3></div><div class="bye-brits__content__bio"><h4>{{Bio}}</h4></div><div class="bye-brits__content__text"><p><span class="intro">{{Intro}}<span>{{{Full}}}</p></div><div class="bye-brits__content__readmore"><a>Read more</a></div></section>{{/each}}';
   const template = Handlebars.compile(source);
 
   const byeBrits = document.querySelector("#bye-brits")
@@ -319,17 +347,19 @@ function buildLetters (data) {
   byeBrits.innerHTML = result
 }
 
+//spreadsheet populates nav
 function buildNav (data) {
   const source = '{{#each Sheet1}}<div class="bye-brits__nav__dropdown-item"><a><span class="dropdown-country-tag">{{Country}} /</span> {{Name}}</a></div>{{/each}}';
   const template = Handlebars.compile(source);
-  const byeBrits = document.querySelector("#dropdown-content")
+  const byeBrits = document.querySelector("#myDropdown")
   var result = template(data);
   byeBrits.innerHTML = result
-
 }
 
 
 
+
+//scroll to country
 
 
 

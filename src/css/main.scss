@@ -28,6 +28,28 @@ $secondaryBlue:#005689;
     overflow: hidden;
     color:$black;
     &__header {
+        background-image:url("https://uploads.guim.co.uk/2020/01/28/newspaper_web.png");
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:-200px -20px;
+        @include mq(mobileMedium){
+            background-size:120vh;
+            background-position:-230px -60px;
+        }
+        @include mq(mobileLandscape){
+            background-position: -200px -80px;
+        }
+        @include mq(phablet){
+            background-size:130vh;
+            background-position: -211px -100px;
+        }
+        @include mq(desktop){
+            background-position: -190px -170px;
+            background-size:130vh;
+        }
+        @include mq(wide){
+            background-position:-120px -170px;
+        }
         width:100%;
         background-color:$darkBlue;
         position: sticky;
@@ -35,77 +57,123 @@ $secondaryBlue:#005689;
         top: -81vh;
         z-index:10;
         @include mq(mobileLandscape){
-            top: -79vh;
+            top: -70vh;
         }
         @include mq(desktop){
-            height:75vh;
+            height:65vh;
             top:-66vh;
         }
         @include mq(leftCol){
-            height:75vh;
+            height:70vh;
             top:-64vh;
         }
         @include mq(wide) {
             height:70vh;
             top: -58vh;
         }
+        &__line {
+            border-top: 1px solid transparent;
+            border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 round stretch;
+            width:calc(100vw - 24px);
+            margin-left:12px;
+            margin-top: 12px;
+            @include mq(desktop){
+                margin-top: 6px;
+                margin-left:0;
+                width:720px;
+            }
+            @include mq(wide){
+                width:800px;
+            }
+        }
+        // &__goodbye-brits {
+        //     font-family:"Guardian Titlepiece","Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
+        //     font-size:28px;
+        //     color:white;
+        //     text-align:right;
+        //     position: absolute;
+        //     bottom: -11px;
+        //     right: 8px;
+        //     @include mq(mobileMedium){
+        //         font-size:33px;
+        //         bottom:-12px;
+        //     }
+        //     @include mq(mobileLandscape){
+        //         font-size: 43px;
+        //         bottom: -15px;
+        //     }
+        //     @include mq(phablet){
+        //         font-size: 59px;
+        //         bottom: -21px;
+        //     }
+        //     @include mq(tablet) {
+        //         font-size: 67px;
+        //         bottom: -24px;
+        //     }
+        //     @include mq(desktop){
+        //         font-size:89px;
+        //         bottom:-33px;
+        //     }
+        //     @include mq(leftCol) {
+        //         font-size: 103px;
+        //         bottom: -38px;
+        //     }
+        //     @include mq(wide) {
+        //         font-size:118px;
+        //         bottom: -42px;
+        //         right: 12px;
+        //     }
+        //     span {
+        //         color:yellow;
+        //     }
+        // }
         &__goodbye-brits {
-            font-family:"Guardian Titlepiece";
-            font-size:28px;
-            color:white;
-            text-align:right;
-            position: absolute;
-            bottom: -11px;
-            right: 8px;
+            font-family:"Guardian Titlepiece","Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
+            font-size:32px;
+            color:$darkBlue;
+            margin-left:12px;
+            margin-top:-6px;
             @include mq(mobileMedium){
-                font-size:33px;
-                bottom:-12px;
+                font-size:38px;
             }
             @include mq(mobileLandscape){
-                font-size: 43px;
-                bottom: -15px;
+                font-size:42px;
             }
             @include mq(phablet){
-                font-size: 59px;
-                bottom: -21px;
+                font-size: 60px;
             }
-            @include mq(tablet) {
-                font-size: 67px;
-                bottom: -24px;
+            @include mq(tablet){
+                font-size:76px;
+                margin-left:20px;
             }
             @include mq(desktop){
-                font-size:89px;
-                bottom:-33px;
+                font-size:80px;
+                margin-top:-16px;
+                margin-left:100px;
             }
-            @include mq(leftCol) {
-                font-size: 103px;
-                bottom: -38px;
-            }
-            @include mq(wide) {
-                font-size:118px;
-                bottom: -42px;
-                right: 12px;
-            }
-            span {
-                color:yellow;
+            @include mq(wide){
+                margin-left:180px;
             }
         }
     }
 
     &__headline {
         font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
-        font-weight:400;
-        font-size:28px;
+        font-weight:200;
+        font-size:20px;
         line-height:115%;
         width: calc(100vw - 24px);
         margin-left: 12px;
+        @include mq(mobileMedium){
+            font-size:22px;
+        }
         @include mq(tablet){
             width: 610px;
             margin-left: 20px;
         }
         @include mq(desktop) {
-            padding-top:42px;
-            font-size:36px;
+            margin-top:0;
+            font-size:34px;
             width: 620px;
             margin-left:100px;
         }
@@ -114,18 +182,26 @@ $secondaryBlue:#005689;
         }
     }
     &__byline {
+        font-family:"Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+        color:#999;
         margin-left: 12px;
         margin-top: 12px;
         font-size: 15px;
         line-height: 115%;
         width: calc(100vw - 24px);
+        @include mq(mobileMedium){
+            width:calc(100vw - 40px);
+        }
+        @include mq(phablet){
+            width:calc(100vw - 220px);
+            margin-left: 12px;
+        }
         @include mq(tablet){
-            width: 610px;
             margin-left: 20px;
         }
         @include mq(desktop){
             margin-left:100px;
-            width: 620px; 
+            width: 440px; 
         }
         @include mq(wide) {
             margin-left: 180px;
@@ -162,7 +238,7 @@ $secondaryBlue:#005689;
             border: 0.1em solid transparent;
             border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 round stretch;
             font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 600;
             text-align: left;
             background-color: white;
@@ -174,7 +250,7 @@ $secondaryBlue:#005689;
                 width:860px;
             }
             &__text {
-                margin-top:1px;
+                margin-top:-2px;
             }
         }
         &__dropbtn:hover {
@@ -182,7 +258,7 @@ $secondaryBlue:#005689;
                 transform:translateY(3px);
             }
             &__text {
-                border-bottom:2px solid transparent;
+                border-bottom:1px solid transparent;
                 border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 stretch;
             }
         }
@@ -221,7 +297,8 @@ $secondaryBlue:#005689;
         }
         &__dropdown-item:hover {
             a {
-                border-bottom:2px solid transparent;
+                color:$secondaryBlue;
+                border-bottom:1px solid transparent;
                 border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 stretch;
             }
         }
@@ -243,7 +320,7 @@ $secondaryBlue:#005689;
             filter: grayscale(100%);
             width: 100%;
             height: auto;
-            max-height:200px;
+            max-height:300px;
             background-image:url(https://media.guim.co.uk/77378756d65206ec228ce5eb02ec2fb014e956c2/1198_0_4792_4792/2000.jpg);
             background-size:cover;
             background-repeat:no-repeat;
@@ -254,22 +331,32 @@ $secondaryBlue:#005689;
         }
         &__country {
             margin-top: -3px;
+            
+            img {
+                width: 25px;
+                height: 16px;
+                margin-top: 3px;
+                margin-right: 7px;
+            }
             h5 {
+                display:flex;
+                flex-direction: row;
+                font-weight:200;
                 font-size:20px;
                 line-height:115%;
             }
         }
         &__name {
-            color:$secondaryBlue;
+            color:$darkBlue;
             h3 {
             font-size:36px;
             font-weight:bold;
             line-height: 105%;
-            margin-top: 4px;
+            margin-top: 1px;
             }
         }
         &__bio {
-            margin-top:5px;
+            margin-top:-2px;
             h4{
                 font-style: italic;
             }
@@ -282,7 +369,7 @@ $secondaryBlue:#005689;
             width: 160px;
             justify-content: flex-start;
             a {
-                color:$secondaryBlue;
+                color:$darkBlue;
                 font-family:"Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
                 font-weight:bold;
                 text-decoration:none;
@@ -292,7 +379,7 @@ $secondaryBlue:#005689;
             }
         }
         &__text {
-            margin-top: 5px;
+            margin-top: -10px;
             p {
                 font-size:17px;
                 line-height:135%;
@@ -316,8 +403,8 @@ $secondaryBlue:#005689;
         &__readmore { grid-area: 6 / 1 / 7 / 2; } 
 
         @include mq(desktop){
-            grid-template-columns: 300px 20px 540px; 
-            grid-template-rows: 21px 40px 26px 24px 2fr 30px;; 
+            grid-template-columns: 300px 20px 530px; 
+            grid-template-rows: 21px 44px 38px 24px 2fr 30px;; 
             grid-column-gap: 0px;
             grid-row-gap: 0px; 
 
@@ -342,3 +429,52 @@ $secondaryBlue:#005689;
 }
 
 
+br {
+    display: block;
+    margin: 10px 0;
+ }
+
+
+ .intro {
+    font-weight: 200;
+    line-height: 115%;
+    font-size: 22px;
+    padding-top: 20px;
+ }
+
+
+
+
+
+
+
+
+ .dropbtn {
+    cursor: pointer;
+    top: 0;
+  }
+  .dropbtn:focus {
+      outline:none;
+  }
+  
+  .dropdown {
+    margin-top: 0;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    z-index: 1;
+    height: 240px;
+    @include mq(desktop){
+        height:360px;
+    }
+  }
+  
+  .dropdown-content a {
+    text-decoration: none;
+  }
+  
+  .show {display: block;}

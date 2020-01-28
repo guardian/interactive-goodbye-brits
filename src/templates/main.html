@@ -1,27 +1,31 @@
 <div class="bye-brits">
   <!-- header -->
   <div class='bye-brits__header'>
-    <h1 class="bye-brits__header__goodbye-brits"><span class="bye-brits__header__change-lang" id="change-lang">Auf wiedersehen,</span> U.K.</h1>
+    <!-- <img class="bye-brits__header-image" src="https://uploads.guim.co.uk/2020/01/28/newspaper_web.png"> -->
+    <!-- <h1 class="bye-brits__header__goodbye-brits"><span class="bye-brits__header__change-lang" id="change-lang">Auf wiedersehen,</span> UK</h1> -->
   </div>
 
   <div class="bye-brits__body gs-container">
-
+    <h1 class="bye-brits__header__goodbye-brits"><span class="bye-brits__header__change-lang" id="change-lang">Goodbye</span></h1>
+    <div class="bye-brits__header__line"></div>
     <h2 class="bye-brits__headline">
-      Subheadline / standfirst can go here lorem ipsum dolte alt sit amen.
+      After 46 years in the EU family, a divided Britain leaves for an uncertain future. Here voices from the other 27 states bid farewell
     </h2>
-    <p class="bye-brits__byline">Edited by: Firstname Surname & Firstname Surname</p>
+    <p class="bye-brits__byline">Edited by: Katherine Butler, Oren Gruenbaum, Claire Phipps, Clare Margetson, Mark Rice-Oxley & Harry Fischer</p>
 
 
     <!-- nav -->
     <div class='bye-brits__nav dropdown'>
-      <button class="bye-brits__nav__dropbtn"><span class="bye-brits__nav__dropbtn__text">Pick a country</span><span class="bye-brits__nav__dropbtn__downarrow">
+      <button onclick="myFunction()" class="bye-brits__nav__dropbtn dropbtn"><span class="bye-brits__nav__dropbtn__text">Pick a country</span><span class="bye-brits__nav__dropbtn__downarrow">
           <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.046875 1.68182L9.54687 11.1818H10.456L19.956 1.68182L19.0696 0.818184L10.0014 8.45455L0.933239 0.818184L0.046875 1.68182Z" fill="black"/></svg></span>
       </button>
-      <div id="dropdown-content" class="bye-brits__nav__dropdown-content">
-        <a>Austria /</span> Persons Name</a>
+      <div id="myDropdown" class="bye-brits__nav__dropdown-content dropdown-content">
+        <a href="#">Austria /</span> Persons Name</a>
       </div>
     </div>
+
+    
 
     <!-- content -->
     <div id="bye-brits">
@@ -960,3 +964,29 @@
   
 </div></div>>
 
+
+
+<script>
+  function myFunction() {
+    // const navItemTag = document.querySelectorAll("..dropdown-content")
+    // const navBtn = document.querySelector(".dropdownbtn")
+    // navBtn.addEventListener("click" (event) => {
+    //   navItemTag.classList.toggle("show")
+    // })
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+  var dropdowns = document.getElementsByClassName(".dropdown-content");
+  var i;
+  for (i = 0; i < dropdowns.length; i++) {
+    var openDropdown = dropdowns[i];
+    if (openDropdown.classList.contains('show')) {
+      openDropdown.classList.remove('show');
+    }
+  }
+}
+}
+</script>
