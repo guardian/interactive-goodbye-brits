@@ -26,34 +26,23 @@ $secondaryBlue:#005689;
     overflow: hidden;
     color:$black;
     &__header {
-        background-image:url("https://uploads.guim.co.uk/2020/01/28/newspaper_web.png");
-        background-size:120vh;
+        // background-image:url("https://uploads.guim.co.uk/2020/01/28/newspaper_web.png");
+        background-image:url("https://uploads.guim.co.uk/2020/01/29/newspaper_online_24.png");
+        background-size:160vh;
         background-repeat:no-repeat;
-        background-position: -240px -53px;
+        background-position: center;
         @include mq(mobileMedium){
             background-size:120vh;
-            background-position:-230px -60px;
-        }
-        @include mq(mobileLandscape){
-            background-position: -200px -80px;
         }
         @include mq(phablet){
             background-size:130vh;
-            background-position: -211px -100px;
         }
         @include mq(desktop){
-            background-position:calc((100vw - 1140px)/2 + -230px) -170px;
-            background-size:130vh;
-        }
-        @include mq(leftCol){
-            background-position:calc((100vw - 1140px)/2 + -190px) -170px;
-        }
-        @include mq(wide){
-            background-position:calc((100vw - 1300px)/2 + -140px) -170px;
+            background-size:180vh;
         }
         width:100%;
         background-color:$darkBlue;
-        height:85vh;
+        height:80vh;
         z-index:10;
         @include mq(desktop){
             height:65vh;
@@ -337,7 +326,8 @@ $secondaryBlue:#005689;
             img {
                 height:auto;
                 width:calc(100vw - 24px);
-                background-color:$darkBlue;
+                border-radius: 50%;
+                // background-color:$darkBlue;
                 @include mq(mobileLandscape){
                     width: auto;
                 height: 300px;
@@ -437,8 +427,8 @@ $secondaryBlue:#005689;
         }
 
         &:nth-child(even) {
-            
-          }
+            grid-template-rows:24px 0fr 0fr 34px 2fr 30px;
+        }
     }         
 }
 

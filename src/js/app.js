@@ -96,7 +96,7 @@ Handlebars.registerHelper('breaklines', function(text) {
 
 //spreadsheet populates content // add this for flag <img src="{{{Flag}}}">
 function buildLetters (data) {
-  const source = '{{#each Sheet1}}{{breaklines description}}<section class="bye-brits__content scrolltome {{Country}}""><div  class="bye-brits__content__country"><h5>{{Country}}</h5></div><div class="bye-brits__content__image"><img src="{{Image}}"></div><div class="bye-brits__content__gap"></div><div class="bye-brits__content__name"><h3>{{Name}}</h3></div><div class="bye-brits__content__bio"><h4>{{Bio}}</h4></div><div class="bye-brits__content__text"><p><span class="intro">{{Intro}}<span>{{{Full}}}</p></div><div class="bye-brits__content__readmore"><a>Read more</a></div></section>{{/each}}';
+  const source = '{{#each Sheet1}}{{breaklines description}}<div class="bye-brits__header__line"></div><section class="bye-brits__content scrolltome {{Country}}""><div  class="bye-brits__content__country"><h5>{{Country}}</h5></div><div class="bye-brits__content__image"><img src="{{Image}}"></div><div class="bye-brits__content__gap"></div><div class="bye-brits__content__name"><h3>{{Name}}</h3></div><div class="bye-brits__content__bio"><h4>{{Bio}}</h4></div><div class="bye-brits__content__text"><p><span class="intro">{{Intro}}<span>{{{Full}}}</p></div><div class="bye-brits__content__readmore"><a>Read more</a></div></section>{{/each}}';
   const template = Handlebars.compile(source);
 
   const byeBrits = document.querySelector("#bye-brits")
