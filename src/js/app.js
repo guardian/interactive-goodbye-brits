@@ -22,49 +22,49 @@ function loadJSON(path, success, error) {
 
 
 // change language on loop 
-const languages = [
-  'Hej då', 
-  'Salut',
-  'Arrivederci',
-  'Dovijdane',
-  'Güle güle',
-  'Ardievas',
-  'Do videnia',
-  'La revedere',
-  'Tschüss',
-  'Adiós',
-  'Zbogom',
-  'Äddi',
-  'Auf wiedersehen',
-  'Doviđenja',
-  'Näkemiin',
-  'Aντιο σας',
-  'Viso gero',
-  'Do widzenia',
-  'Viszontlátásra',
-  'Adeus',
-  'Head aega',
-  'Au revoir',
-  'Vaarwel',
-  'Addiju',
-  'Slán',
-  'Farvel',
-  'Goodbye'
-];
+// const languages = [
+//   'Hej då', 
+//   'Salut',
+//   'Arrivederci',
+//   'Dovijdane',
+//   'Güle güle',
+//   'Ardievas',
+//   'Do videnia',
+//   'La revedere',
+//   'Tschüss',
+//   'Adiós',
+//   'Zbogom',
+//   'Äddi',
+//   'Auf wiedersehen',
+//   'Doviđenja',
+//   'Näkemiin',
+//   'Aντιο σας',
+//   'Viso gero',
+//   'Do widzenia',
+//   'Viszontlátásra',
+//   'Adeus',
+//   'Head aega',
+//   'Au revoir',
+//   'Vaarwel',
+//   'Addiju',
+//   'Slán',
+//   'Farvel',
+//   'Goodbye'
+// ];
 
-// 'Slán agus beannacht'
+// // 'Slán agus beannacht'
 
 
 
-let i = 0;
-const loopLanguages = setInterval(() => {
-  document.getElementById('change-lang').innerHTML = languages[i];
-  if (i == (languages.length - 1)) {
-    i = 0;
-  } else {
-    i++;
-  }
-}, 1500)
+// let i = 0;
+// const loopLanguages = setInterval(() => {
+//   document.getElementById('change-lang').innerHTML = languages[i];
+//   if (i == (languages.length - 1)) {
+//     i = 0;
+//   } else {
+//     i++;
+//   }
+// }, 1500)
 
 
 
@@ -102,8 +102,9 @@ function buildLetters (data) {
   const byeBrits = document.querySelector("#bye-brits")
 
   var result = template(data);
-  byeBrits.innerHTML = result
+  byeBrits.innerHTML = result;  
 }
+
 
 //spreadsheet populates nav
 function buildNav (data) {
@@ -113,6 +114,15 @@ function buildNav (data) {
   var result = template(data);
   byeBrits.innerHTML = result
 }
+
+
+// readMoreBtn.forEach (e => {
+//   console.log(e);
+//   e.addEventListener("click", () => {
+//     var parent = this
+//     console.log(parent)
+//   })
+// })
 
 
 
