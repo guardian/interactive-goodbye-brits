@@ -78,26 +78,28 @@
       </div>
     </div>
 
-    
+
 
     <!-- content -->
     <div id="bye-brits">
+      {{#Sheet1}}
       <section class="bye-brits__content">
-        <div  class="bye-brits__content__country"><h5>~Country</h5></div>
-        <div class="bye-brits__content__image"></div>
+        <div  class="bye-brits__content__country"><h5>{{{Country}}}</h5></div>
+        <div class="bye-brits__content__image"><img src="{{Image}}"></div>
         <div class="bye-brits__content__gap"></div>
-        <div class="bye-brits__content__name"><h3>Firstname Surname</h3></div>
-        <div class="bye-brits__content__bio"><h4>Doctor</h4></div>
-        <div class="bye-brits__content__text"><p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p></div>
+        <div class="bye-brits__content__name"><h3>{{{Name}}}</h3></div>
+        <div class="bye-brits__content__bio"><h4>{{{Bio}}}</h4></div>
+        <div class="bye-brits__content__text"><p>{{{Intro}}}</p><p>{{{Full}}}</p></div>
         <div class="bye-brits__content__readmore"><a>Read more</a></div>
       </section>
+      {{/Sheet1}}
     </div>
   </div>
 </div>
-  
-  
 
-  
+
+
+
 
 
 
@@ -111,7 +113,7 @@
       // })
       document.getElementById("myDropdown").classList.toggle("show");
     }
-  
+
   // Close the dropdown if the user clicks outside of it
   window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
@@ -130,13 +132,13 @@
 
 
 
-  
+
   <!-- <section id="series" class="fc-container fc-container--will-have-toggle js-container--toggle " data-link-name="container-2 | series" data-id="series" data-component="series" aria-expanded="true">
     <div class="fc-container__inner">
       <header class="fc-container__header js-container__header">
         <header class="fc-container__header
         fc-container__header--is-badged
-  
+
   ">
           <div class="fc-container__header__title">
             <a data-link-name="section heading" href="https://www.theguardian.com/cities/series/the-empty-doorway">
@@ -151,7 +153,7 @@
           <p>An estimated 800 homeless people died in the 18 months to March 2019. In this series, Guardian Cities looks behind this statistic to tell the stories of some of those who have died on Britain’s streets</p>
         </div>
       </header>
-  
+
       <div class="fc-container--rolled-up-hide fc-container__body" data-title="The empty doorway" data-id="series">
         <div class="fc-slice-wrapper">
           <ul class="u-unstyled l-row  l-row--cols-4 fc-slice fc-slice--q-q-q-q">
@@ -188,20 +190,20 @@
                     </div>
                     <div class="fc-item__avatar">
                       <picture>
-  
+
                         [if IE 9]><video style="display: none;"><![endif]
-  
+
                         <source media="(min-width: 980px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 980px) and (min-resolution: 120dpi)" sizes="216px" srcset="https://i.guim.co.uk/img/uploads/2017/10/06/Jon_Henley,_L.png?width=216&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=1.3&amp;s=3fc65a1f0c2ad81b661b082f51fcae4a" 432w="">
                         <source media="(min-width: 980px)" sizes="216px" srcset="https://i.guim.co.uk/img/uploads/2017/10/06/Jon_Henley,_L.png?width=216&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=a3533191810c6475861573e42bc83113 216w">
-  
+
                         <source media="(min-width: 740px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 740px) and (min-resolution: 120dpi)" sizes="216px" srcset="https://i.guim.co.uk/img/uploads/2017/10/06/Jon_Henley,_L.png?width=216&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=1.3&amp;s=3fc65a1f0c2ad81b661b082f51fcae4a" 432w="">
                         <source media="(min-width: 740px)" sizes="216px" srcset="https://i.guim.co.uk/img/uploads/2017/10/06/Jon_Henley,_L.png?width=216&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=a3533191810c6475861573e42bc83113 216w">
-  
+
                         <source media="(min-width: 0px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 0px) and (min-resolution: 120dpi)" sizes="115px" srcset="https://i.guim.co.uk/img/uploads/2017/10/06/Jon_Henley,_L.png?width=115&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=1.3&amp;s=a3f02f27ef8d9b184a7ac2afd004e502" 230w="">
                         <source media="(min-width: 0px)" sizes="115px" srcset="https://i.guim.co.uk/img/uploads/2017/10/06/Jon_Henley,_L.png?width=115&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=0bf2d82d25dc82199bf90bd664cc1e94 115w">
-  
+
                         [if IE 9]></video><![endif]
-  
+
                         <img loading="lazy" class="fc-item__avatar__media image--landscape" alt="" src="https://uploads.guim.co.uk/2017/10/06/Jon_Henley,_L.png">
                       </picture>
                     </div>
@@ -225,21 +227,21 @@
             <li class="fc-slice__item l-row__item l-row__item--span-1 u-faux-block-link">
               <div class="fc-item fc-item--has-image fc-item--has-metadata fc-item--has-timestamp fc-item--pillar-news fc-item--type-feature js-fc-item fc-item--list-media-mobile fc-item--standard-tablet js-snappable" data-link-name="feature | group-0 | card-@2" data-item-visibility="all" data-test-id="facia-card" data-id="cities/2019/dec/10/mark-starrs-family-thought-he-was-thriving-in-a-new-city-the-truth-was-far-darker" data-loyalty-short-url="/p/cpex2">
                 <div class="fc-item__container">
-                  <div class="fc-item__media-wrapper">  
+                  <div class="fc-item__media-wrapper">
                     <div class="fc-item__image-container u-responsive-ratio ">
                       <picture>
 
                         [if IE 9]><video style="display: none;"><![endif]
-  
+
                         <source media="(min-width: 980px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 980px) and (min-resolution: 120dpi)" sizes="220px" srcset="https://i.guim.co.uk/img/media/19cd3be66b8a0c07655d458323355606a0979848/0_349_5698_3420/master/5698.jpg?width=220&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=d35377a54972a060ce5b090024a9fb49" 440w="">
                         <source media="(min-width: 980px)" sizes="220px" srcset="https://i.guim.co.uk/img/media/19cd3be66b8a0c07655d458323355606a0979848/0_349_5698_3420/master/5698.jpg?width=220&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=a743e51aa0de81e3141bce037bc05f6d 220w">
-  
+
                         <source media="(min-width: 740px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 740px) and (min-resolution: 120dpi)" sizes="160px" srcset="https://i.guim.co.uk/img/media/19cd3be66b8a0c07655d458323355606a0979848/0_349_5698_3420/master/5698.jpg?width=160&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=293b28a9b410b15cd32051916b74437c" 320w="">
                         <source media="(min-width: 740px)" sizes="160px" srcset="https://i.guim.co.uk/img/media/19cd3be66b8a0c07655d458323355606a0979848/0_349_5698_3420/master/5698.jpg?width=160&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=88e5453b54c3c3181ed25d13875bbda2 160w">
-  
+
                         <source media="(min-width: 0px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 0px) and (min-resolution: 120dpi)" sizes="127px" srcset="https://i.guim.co.uk/img/media/19cd3be66b8a0c07655d458323355606a0979848/0_349_5698_3420/master/5698.jpg?width=127&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=c3e4766a02ab2ed471083aa8bd1aac93" 254w="">
                         <source media="(min-width: 0px)" sizes="127px" srcset="https://i.guim.co.uk/img/media/19cd3be66b8a0c07655d458323355606a0979848/0_349_5698_3420/master/5698.jpg?width=127&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=97bdcb6131487fe7c30ded366e620e54 127w">
-  
+
                         [if IE 9]></video><![endif]
                         <img loading="lazy" class="responsive-img" alt="" src="https://i.guim.co.uk/img/media/19cd3be66b8a0c07655d458323355606a0979848/0_349_5698_3420/master/5698.jpg?width=300&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=b0ce2d748e8065d2fca0eb282c021abb">
                       </picture>
@@ -296,8 +298,8 @@
                     <div class="fc-item__header">
                       <h3 class="fc-item__title"><a href="https://www.theguardian.com/cities/video/2019/dec/10/my-homeless-brother-died-on-the-streets-of-glasgow-who-will-be-next-video" class="fc-item__link" data-link-name="article">
                           <span class="u-faux-block-link__cta fc-item__headline">
-  
-  
+
+
                             <span class="js-headline-text">My homeless brother died on the streets of Glasgow. Who will be next? –&nbsp;video&nbsp;</span></span>
                         </a></h3>
                     </div>
@@ -327,36 +329,36 @@
                           </time>
                         </div>
                       </div>
-                    </div>  
+                    </div>
                   </div>
                   <a href="https://www.theguardian.com/cities/video/2019/dec/10/my-homeless-brother-died-on-the-streets-of-glasgow-who-will-be-next-video" class="u-faux-block-link__overlay js-headline-text" data-link-name="article" tabindex="-1" aria-hidden="true">My homeless brother died on the streets of Glasgow. Who will be next? –&nbsp;video&nbsp;</a>
                 </div>
               </div>
             </li>
             <li class="fc-slice__item l-row__item l-row__item--span-1 u-faux-block-link">
-  
+
               <div class="fc-item fc-item--has-image fc-item--has-metadata fc-item--has-timestamp fc-item--pillar-news fc-item--type-comment js-fc-item fc-item--list-media-mobile fc-item--standard-tablet js-snappable" data-link-name="comment | group-0 | card-@4" data-item-visibility="all" data-test-id="facia-card" data-id="cities/2019/dec/03/the-homeless-death-statistics-are-shocking-but-the-true-total-may-be-even-higher" data-loyalty-short-url="/p/cnq3g">
 
                 <div class="fc-item__container">
                   <div class="fc-item__media-wrapper">
                     <div class="fc-item__image-container u-responsive-ratio ">
                       <picture>
-  
+
                         [if IE 9]><video style="display: none;"><![endif]
-  
+
                         <source media="(min-width: 980px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 980px) and (min-resolution: 120dpi)" sizes="220px" srcset="https://i.guim.co.uk/img/media/00ec34d900ec59c9f009a2876de4060ed92349d3/0_69_3488_2094/master/3488.jpg?width=220&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=c35f400eaba7de7c7a53373b17fbd8f8" 440w="">
                         <source media="(min-width: 980px)" sizes="220px" srcset="https://i.guim.co.uk/img/media/00ec34d900ec59c9f009a2876de4060ed92349d3/0_69_3488_2094/master/3488.jpg?width=220&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=7a36ec2d45d5f237f2dec7aebbc08386 220w">
-  
+
                         <source media="(min-width: 740px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 740px) and (min-resolution: 120dpi)" sizes="160px" srcset="https://i.guim.co.uk/img/media/00ec34d900ec59c9f009a2876de4060ed92349d3/0_69_3488_2094/master/3488.jpg?width=160&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=74af65d487ad51319b908c2e7381a99e" 320w="">
                         <source media="(min-width: 740px)" sizes="160px" srcset="https://i.guim.co.uk/img/media/00ec34d900ec59c9f009a2876de4060ed92349d3/0_69_3488_2094/master/3488.jpg?width=160&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=81ebb606a6d94776744f8e403331188e 160w">
-  
+
                         <source media="(min-width: 0px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 0px) and (min-resolution: 120dpi)" sizes="127px" srcset="https://i.guim.co.uk/img/media/00ec34d900ec59c9f009a2876de4060ed92349d3/0_69_3488_2094/master/3488.jpg?width=127&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=84e18d82ae80e9e00b2da73fe6d25654" 254w="">
                         <source media="(min-width: 0px)" sizes="127px" srcset="https://i.guim.co.uk/img/media/00ec34d900ec59c9f009a2876de4060ed92349d3/0_69_3488_2094/master/3488.jpg?width=127&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=be8ac52c046de75371f40760045cd1d9 127w">
-  
+
                         [if IE 9]></video><![endif]
-  
+
                         <img loading="lazy" class="responsive-img" alt="" src="https://i.guim.co.uk/img/media/00ec34d900ec59c9f009a2876de4060ed92349d3/0_69_3488_2094/master/3488.jpg?width=300&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=2588eb58639645490f4a58a0d25c0672">
-  
+
                       </picture>
                     </div>
                   </div>
@@ -410,6 +412,3 @@
       </div>
     </div>
   </section> -->
-
-
-
