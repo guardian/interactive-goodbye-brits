@@ -94,7 +94,7 @@ $secondaryBlue:#005689;
 
         &__goodbye-brits {
                 font-family:"Guardian Titlepiece","Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
-                font-size:18vw;
+                font-size:16vw;
                 line-height: 115%;
                 color:$darkBlue;
                 margin-left:0;
@@ -151,11 +151,7 @@ $secondaryBlue:#005689;
             margin-left: 20px;
         }
         @include mq(desktop){
-<<<<<<< HEAD
-            width: 600px; 
-=======
             width: 440px;
->>>>>>> 49df8995abd7e3774287d7c82440348609d6298c
         }
         @include mq(leftCol){
             margin-left:100px;
@@ -278,7 +274,7 @@ $secondaryBlue:#005689;
         }
         @include mq(mobileLandscape){
             flex-direction:row;
-            height: 230px;
+            min-height: 230px;
         }
         @include mq(leftCol){
             flex-direction: row;
@@ -293,7 +289,7 @@ $secondaryBlue:#005689;
         }
         @include mq(wide){
             width:calc(1300px - 440px);
-            height: 280px;
+            min-height: 280px;
             margin-left:180px;
         }
         &__left {
@@ -309,18 +305,15 @@ $secondaryBlue:#005689;
             @include mq(tablet){
                 width:100%;
             }
+
+            &.clicked .bye-brits__content__text p {
+                display:block;
+            }
         }
-        
-        
+
+
 
         &__image {
-<<<<<<< HEAD
-=======
-
-            // background-image:url(https://media.guim.co.uk/77378756d65206ec228ce5eb02ec2fb014e956c2/1198_0_4792_4792/2000.jpg);
-            // background-size:cover;
-            // background-repeat:no-repeat;
->>>>>>> 49df8995abd7e3774287d7c82440348609d6298c
             @include mq(mobileLandscape){
                 width: 100%;
                 height: 300px;
@@ -348,16 +341,7 @@ $secondaryBlue:#005689;
         }
         &__country {
             margin-top: -3px;
-<<<<<<< HEAD
-=======
 
-            img {
-                width: 25px;
-                height: 16px;
-                margin-top: 3px;
-                margin-right: 7px;
-            }
->>>>>>> 49df8995abd7e3774287d7c82440348609d6298c
             h5 {
                 display:flex;
                 flex-direction: row;
@@ -388,10 +372,6 @@ $secondaryBlue:#005689;
             }
         }
         &__readmore {
-<<<<<<< HEAD
-=======
-
->>>>>>> 49df8995abd7e3774287d7c82440348609d6298c
             border: 1px solid transparent;
             border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 round stretch;
             display: flex;
@@ -421,10 +401,6 @@ $secondaryBlue:#005689;
             }
         }
 
-        &.clicked .bye-brits__content__text p {
-            display:block;
-        }
-<<<<<<< HEAD
         .intro {
             font-family: "Guardian Text Egyptian Web",Georgia,serif;
             font-weight: 200;
@@ -432,7 +408,7 @@ $secondaryBlue:#005689;
             font-size: 22px;
             margin-top:20px;
          }
-        
+
          .intro::before{
             content: '';
             background-image: url(https://uploads.guim.co.uk/2020/01/29/GU-singlequote-texture.png);
@@ -445,7 +421,7 @@ $secondaryBlue:#005689;
             width: 19px;
             margin-right: -2px;
          }
-    }  
+    }
 }
 
 
@@ -466,47 +442,6 @@ $secondaryBlue:#005689;
     }
     @include mq(leftCol){
         right:180px;
-=======
-    }
-    // css grid
-    &__content {
-        display: grid;
-        grid-template-columns: calc(100vw - 24px);
-        grid-template-rows:24px 0fr 0fr 34px 2fr 30px;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-
-        &__country { grid-area: 1 / 1 / 2 / 2; }
-        &__image { grid-area: 2 / 1 / 3 / 2; }
-        &__name { grid-area: 3 / 1 / 4 / 2; }
-        &__bio { grid-area: 4 / 1 / 5 / 2; }
-        &__text { grid-area: 5 / 1 / 6 / 2; }
-        &__readmore { grid-area: 6 / 1 / 7 / 2; }
-
-
-        @include mq(mobileLandscape){
-            grid-template-rows:24px 0 0fr 34px 2fr 30px;
-        }
-
-        @include mq(tablet){
-            grid-template-columns: 300px 20px 530px;
-            grid-template-rows: 21px 44px 38px 24px 2fr 30px;;
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
-
-            &__image { grid-area: 1 / 1 / 7 / 2; }
-            &__gap { grid-area: 1 / 2 / 7 / 3; }
-            &__country { grid-area: 1 / 3 / 2 / 4; }
-            &__name { grid-area: 2 / 3 / 3 / 4; }
-            &__bio { grid-area: 3 / 3 / 4 / 4; }
-            &__text { grid-area: 4 / 3 / 6 / 4; }
-            &__readmore { grid-area: 6 / 3 / 7 / 4; }
-        }
-
-        &:nth-child(even) {
-            grid-template-rows:24px 0fr 0fr 34px 2fr 30px;
-        }
->>>>>>> 49df8995abd7e3774287d7c82440348609d6298c
     }
 }
 
@@ -547,14 +482,5 @@ br {
   .dropdown-content a {
     text-decoration: none;
   }
-<<<<<<< HEAD
-  
-  .show {display: block;}
-
-
-
-  .bye-brits__content:nth-child()
-=======
 
   .show {display: block;}
->>>>>>> 49df8995abd7e3774287d7c82440348609d6298c
