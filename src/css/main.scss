@@ -102,7 +102,7 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
                 font-size:16vw;
                 line-height: 115%;
                 color:$darkBlue;
-                margin-left:0;
+                margin-left:12px;
                 margin-top:0;
 
                 &.stickme {
@@ -110,7 +110,13 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
                   width: calc(98vw);
                   position: fixed;
                   top: -1px;
-                  font-size: 60px;
+                  font-size: 32px;
+                  @include mq(mobileMedium){
+                    font-size:36px;
+                  }
+                  @include mq(desktop){
+                    font-size: 60px;
+                  }
                   padding-bottom: 12px;
                   padding-left: 1%;
                   opacity: 0;
@@ -199,15 +205,19 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
         z-index: 9;
         margin-left: 12px;
         width:calc(100vw - 24px);
+        position: sticky;
+        top: 38px;
         @include mq(mobileMedium){
             padding-top: 20px;
             padding-bottom: 9px;
         }
         @include mq(tablet){
-            margin-left: 20px;
-            width: calc(100vw - 40px);
+            margin-left: 12px;
+            width: calc(100vw - 24px);
         }
         @include mq(desktop){
+            margin-left:20px;
+            top: 60px;
             width:860px;
         }
         @include mq(leftCol){
@@ -451,7 +461,11 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
             line-height: 115%;
             font-size: 22px;
             margin-top:20px;
-            width: 460px;
+            width: 290px;
+            @include mq(desktop){
+                width: 460px;
+            }
+            
          }
 
          .intro::before{
