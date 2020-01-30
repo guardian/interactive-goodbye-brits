@@ -75,7 +75,7 @@
       </button>
       <div id="myDropdown" class="bye-brits__nav__dropdown-content dropdown-content bye-brits__nav__dropdown-item">
         {{#Sheet1}}
-        <div><a href="#"><span class="dropdown-country-tag">{{Country}}</span> / {{Name}}</a></div>
+        <div><a href="#{{Country}}"><span class="dropdown-country-tag">{{Country}}</span> / {{Name}}</a></div>
         {{/Sheet1}}
       </div>
     </div>
@@ -86,7 +86,7 @@
     <div id="bye-brits">
       {{#Sheet1}}
       <div class="bye-brits__header__line"></div>
-      <section class="bye-brits__content">
+      <section id="{{{Country}}}" class="bye-brits__content">
         <div class="bye-brits__content__left">
           <div class="bye-brits__content__image"><img src="{{Image}}"></div>
         </div>
