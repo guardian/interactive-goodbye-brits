@@ -217,14 +217,14 @@ $secondaryBlue:#005689;
             margin-left: 20px;
         }
         @include mq(desktop){
-            width: 440px; 
+            width: 440px;
         }
         @include mq(leftCol){
             margin-left:100px;
         }
         @include mq(wide) {
             margin-left: 180px;
-        } 
+        }
     }
     &__nav {
         padding-top:10px;
@@ -338,7 +338,7 @@ $secondaryBlue:#005689;
             margin-left:180px;
         }
         &__image {
-            
+
             // background-image:url(https://media.guim.co.uk/77378756d65206ec228ce5eb02ec2fb014e956c2/1198_0_4792_4792/2000.jpg);
             // background-size:cover;
             // background-repeat:no-repeat;
@@ -363,7 +363,7 @@ $secondaryBlue:#005689;
         }
         &__country {
             margin-top: -3px;
-            
+
             img {
                 width: 25px;
                 height: 16px;
@@ -394,7 +394,7 @@ $secondaryBlue:#005689;
             }
         }
         &__readmore {
-            
+
             border: 1px solid transparent;
             border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 round stretch;
             display: flex;
@@ -421,24 +421,25 @@ $secondaryBlue:#005689;
                 }
             }
         }
-        .show p {
+
+        &.clicked .bye-brits__content__text p {
             display:block;
         }
     }
     // css grid
-    &__content {  
+    &__content {
         display: grid;
-        grid-template-columns: calc(100vw - 24px); 
+        grid-template-columns: calc(100vw - 24px);
         grid-template-rows:24px 0fr 0fr 34px 2fr 30px;
         grid-column-gap: 0px;
-        grid-row-gap: 0px; 
-        
-        &__country { grid-area: 1 / 1 / 2 / 2; } 
-        &__image { grid-area: 2 / 1 / 3 / 2; } 
-        &__name { grid-area: 3 / 1 / 4 / 2; } 
-        &__bio { grid-area: 4 / 1 / 5 / 2; } 
-        &__text { grid-area: 5 / 1 / 6 / 2; } 
-        &__readmore { grid-area: 6 / 1 / 7 / 2; } 
+        grid-row-gap: 0px;
+
+        &__country { grid-area: 1 / 1 / 2 / 2; }
+        &__image { grid-area: 2 / 1 / 3 / 2; }
+        &__name { grid-area: 3 / 1 / 4 / 2; }
+        &__bio { grid-area: 4 / 1 / 5 / 2; }
+        &__text { grid-area: 5 / 1 / 6 / 2; }
+        &__readmore { grid-area: 6 / 1 / 7 / 2; }
 
 
         @include mq(mobileLandscape){
@@ -446,24 +447,24 @@ $secondaryBlue:#005689;
         }
 
         @include mq(tablet){
-            grid-template-columns: 300px 20px 530px; 
-            grid-template-rows: 21px 44px 38px 24px 2fr 30px;; 
+            grid-template-columns: 300px 20px 530px;
+            grid-template-rows: 21px 44px 38px 24px 2fr 30px;;
             grid-column-gap: 0px;
-            grid-row-gap: 0px; 
+            grid-row-gap: 0px;
 
-            &__image { grid-area: 1 / 1 / 7 / 2; } 
-            &__gap { grid-area: 1 / 2 / 7 / 3; } 
-            &__country { grid-area: 1 / 3 / 2 / 4; } 
-            &__name { grid-area: 2 / 3 / 3 / 4; } 
-            &__bio { grid-area: 3 / 3 / 4 / 4; } 
-            &__text { grid-area: 4 / 3 / 6 / 4; } 
-            &__readmore { grid-area: 6 / 3 / 7 / 4; } 
+            &__image { grid-area: 1 / 1 / 7 / 2; }
+            &__gap { grid-area: 1 / 2 / 7 / 3; }
+            &__country { grid-area: 1 / 3 / 2 / 4; }
+            &__name { grid-area: 2 / 3 / 3 / 4; }
+            &__bio { grid-area: 3 / 3 / 4 / 4; }
+            &__text { grid-area: 4 / 3 / 6 / 4; }
+            &__readmore { grid-area: 6 / 3 / 7 / 4; }
         }
 
         &:nth-child(even) {
             grid-template-rows:24px 0fr 0fr 34px 2fr 30px;
         }
-    }         
+    }
 }
 
 .element-atom,
@@ -509,12 +510,12 @@ br {
   .dropbtn:focus {
       outline:none;
   }
-  
+
   .dropdown {
     margin-top: 0;
     display: inline-block;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -525,9 +526,9 @@ br {
         height:360px;
     }
   }
-  
+
   .dropdown-content a {
     text-decoration: none;
   }
-  
+
   .show {display: block;}
