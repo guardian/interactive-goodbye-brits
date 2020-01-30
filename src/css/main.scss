@@ -99,6 +99,21 @@ $secondaryBlue:#005689;
                 color:$darkBlue;
                 margin-left:0;
                 margin-top:0;
+
+                &.stickme {
+                  background-color: white;
+                  width: 99%;
+                  position: fixed;
+                  top: 0;
+                  font-size: 60px;
+                  padding-bottom: 12px;
+                  padding-left: 1%;
+                  opacity: 0;
+
+                  &.showme {
+                    opacity: 1;
+                  }
+                }
         }
     }
 
