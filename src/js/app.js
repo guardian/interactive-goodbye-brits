@@ -51,7 +51,7 @@ function readMore(){
      console.log(this.innerHTML);
      parent.classList.toggle('clicked');
      if(this.innerHTML === '<a>Read more</a>') {
-       this.innerHTML = "<a>Read Less</a>";
+       this.innerHTML = "<a>Read less</a>";
      } else {
        this.innerHTML = "<a>Read more</a>"
      }
