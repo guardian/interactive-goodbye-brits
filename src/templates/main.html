@@ -1,11 +1,15 @@
 <div class="bye-brits">
-  <div class='bye-brits__header'>
-    <!-- <img class="bye-brits__header-image" src="https://uploads.guim.co.uk/2020/01/28/newspaper_web.png"> -->
-    <!-- <h1 class="bye-brits__header__goodbye-brits"><span class="bye-brits__header__change-lang" id="change-lang">Auf wiedersehen,</span> UK</h1> -->
+  <div class="header-wrapper">
+    <div class='bye-brits__header'>
+      <!-- <img class="bye-brits__header-image" src="https://uploads.guim.co.uk/2020/01/28/newspaper_web.png"> -->
+      <!-- <h1 class="bye-brits__header__goodbye-brits"><span class="bye-brits__header__change-lang" id="change-lang">Auf wiedersehen,</span> UK</h1> -->
+    </div>
   </div>
 
   <div class="bye-brits__body gs-container">
-    <h1 class="bye-brits__header__goodbye-brits"><span class="bye-brits__header__change-lang" id="change-lang">Goodbye</span></h1>
+    <div class="headline_tracker"></div>
+    <h1 class="bye-brits__header__goodbye-brits"><span class="bye-brits__header__change-lang">Goodbye</span></h1>
+    <h1 class="bye-brits__header__goodbye-brits stickme"><span class="bye-brits__header__change-lang" id="change-lang">Goodbye</span></h1>
     <div class="bye-brits__header__line"></div>
     <h2 class="bye-brits__headline">After 46 years in the EU family, a divided Britain leaves for an uncertain future. Here voices from the other 27 states bid farewell</h2>
     <p class="bye-brits__byline">Editors: Katherine Butler, Mark Rice-Oxley, Joe Stone, Clare Margetson <br>Design and production: Harry Fischer, Oren Gruenbaum, Claire Phipps, Andrew Stocks</p>
@@ -75,7 +79,7 @@
       </button>
       <div id="myDropdown" class="bye-brits__nav__dropdown-content dropdown-content bye-brits__nav__dropdown-item">
         {{#Sheet1}}
-        <div><a href="#"><span class="dropdown-country-tag">{{Country}}</span> / {{Name}}</a></div>
+        <div><a href="#{{Country}}"><span class="dropdown-country-tag">{{Country}}</span> / {{Name}}</a></div>
         {{/Sheet1}}
       </div>
     </div>
@@ -85,8 +89,8 @@
     <!-- content -->
     <div id="bye-brits">
       {{#Sheet1}}
-      
-      <section class="bye-brits__content">
+      <div class="bye-brits__header__line"></div>
+      <section id="{{{Country}}}" class="bye-brits__content">
         <div class="bye-brits__content__left">
           <div class="bye-brits__content__image"><img src="{{Image}}"></div>
         </div>
