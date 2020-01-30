@@ -85,14 +85,18 @@
     <!-- content -->
     <div id="bye-brits">
       {{#Sheet1}}
+      <div class="bye-brits__header__line"></div>
       <section class="bye-brits__content">
-        <div  class="bye-brits__content__country"><h5>{{{Country}}}</h5></div>
-        <div class="bye-brits__content__image"><img src="{{Image}}"></div>
-        <div class="bye-brits__content__gap"></div>
-        <div class="bye-brits__content__name"><h3>{{{Name}}}</h3></div>
-        <div class="bye-brits__content__bio"><h4>{{{Bio}}}</h4></div>
-        <div class="bye-brits__content__text"><p>{{{Intro}}}</p><p>{{{Full}}}</p></div>
-        <div class="bye-brits__content__readmore"><a>Read more</a></div>
+        <div class="bye-brits__content__left">
+          <div class="bye-brits__content__image"><img src="{{Image}}"></div>
+        </div>
+        <div class="bye-brits__content__right">
+          <div  class="bye-brits__content__country"><h5>{{{Country}}}</h5></div>
+          <div class="bye-brits__content__name"><h3>{{{Name}}}</h3></div>
+          <div class="bye-brits__content__bio"><h4>{{{Bio}}}</h4></div>
+          <div class="bye-brits__content__text"><p class="intro">{{{Intro}}}</p><p>{{{Full}}}</p></div>
+          <div class="bye-brits__content__readmore"><a>Read more</a></div>
+        </div>
       </section>
       {{/Sheet1}}
     </div>
