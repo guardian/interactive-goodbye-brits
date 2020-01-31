@@ -51,9 +51,11 @@ function readMore(){
      var parent = this.parentNode;
      console.log(this.innerHTML);
      parent.classList.toggle('clicked');
-     if(this.innerHTML === '<a>Read more</a>') {
+     var Inner = this.innerHTML.replace(/^\s+|\s+$/g, '');
+
+     if(Inner === '<a>Read more</a>') {
          console.log("TRUE")
-       this.innerHTML = '<a>Read less</a>';
+         this.innerHTML = '<a>Read less</a>';
      } else {
          console.log('FALSE')
        this.innerHTML = '<a>Read more</a>'
