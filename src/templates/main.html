@@ -1,17 +1,18 @@
 <div class="bye-brits">
+  <h1 class="big-goodbye">Goodbye</h1>
   <div class="header-wrapper">
     <div class='bye-brits__header'>
       <!-- <img class="bye-brits__header-image" src="https://uploads.guim.co.uk/2020/01/28/newspaper_web.png"> -->
-      <!-- <h1 class="bye-brits__header__goodbye-brits"><span class="bye-brits__header__change-lang" id="change-lang">Auf wiedersehen,</span> UK</h1> -->
     </div>
   </div>
 
   <div class="bye-brits__body gs-container">
     <div class="headline_tracker"></div>
-    <h1 class="bye-brits__header__goodbye-brits"><span class="bye-brits__header__change-lang">Goodbye</span></h1>
-    <h1 class="bye-brits__header__goodbye-brits stickme"><span class="bye-brits__header__change-lang" id="change-lang">Goodbye</span></h1>
+    <!-- <h1 class="bye-brits__header__goodbye-brits"><span class="bye-brits__header__change-lang">Goodbye</span></h1> -->
+    <div class="spacer"></div>
+    <h1 class="bye-brits__header__goodbye-brits stickme"><span class="bye-brits__header__change-lang" id="change-lang"></span></h1>
     <div class="bye-brits__header__line"></div>
-    <h2 class="bye-brits__headline">After 46 years in the EU family, a divided Britain leaves for an uncertain future. Here voices from the other 27 states bid farewell</h2>
+    <h2 class="bye-brits__headline">After 47 years in the EU family, a divided Britain leaves for an uncertain future. Here voices from the other 27 states bid farewell</h2>
     <p class="bye-brits__byline">Editors: Katherine Butler, Mark Rice-Oxley, Joe Stone, Clare Margetson <br>Design and production: Harry Fischer, Oren Gruenbaum, Claire Phipps, Andrew Stocks</p>
     <div class='methodology'>
       <div class='base-col'>
@@ -72,15 +73,17 @@
 
 
     <!-- nav -->
-    <div class='bye-brits__nav dropdown'>
-      <button onclick="myFunction()" class="bye-brits__nav__dropbtn dropbtn"><span class="bye-brits__nav__dropbtn__text">Pick a country</span><span class="bye-brits__nav__dropbtn__downarrow">
-          <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.046875 1.68182L9.54687 11.1818H10.456L19.956 1.68182L19.0696 0.818184L10.0014 8.45455L0.933239 0.818184L0.046875 1.68182Z" fill="black"/></svg></span>
-      </button>
-      <div id="myDropdown" class="bye-brits__nav__dropdown-content dropdown-content bye-brits__nav__dropdown-item">
-        {{#Sheet1}}
-        <div><a href="#{{Country}}"><span class="dropdown-country-tag">{{Country}}</span> / {{Name}}</a></div>
-        {{/Sheet1}}
+    <div class="bye-brits__nav-wrapper">
+      <div class='bye-brits__nav dropdown'>
+        <button onclick="myFunction()" class="bye-brits__nav__dropbtn dropbtn"><span class="bye-brits__nav__dropbtn__text">Pick a country</span><span class="bye-brits__nav__dropbtn__downarrow">
+            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.046875 1.68182L9.54687 11.1818H10.456L19.956 1.68182L19.0696 0.818184L10.0014 8.45455L0.933239 0.818184L0.046875 1.68182Z" fill="black"/></svg></span>
+        </button>
+        <div id="myDropdown" class="bye-brits__nav__dropdown-content dropdown-content bye-brits__nav__dropdown-item">
+          {{#Sheet1}}
+          <div><a href="#{{Country}}"><span class="dropdown-country-tag">{{Country}}</span> / {{Name}}</a></div>
+          {{/Sheet1}}
+        </div>
       </div>
     </div>
 
@@ -89,8 +92,9 @@
     <!-- content -->
     <div id="bye-brits">
       {{#Sheet1}}
+      <div id="{{{Country}}}" class="anchor"></div>
       <div class="bye-brits__header__line"></div>
-      <section id="{{{Country}}}" class="bye-brits__content">
+      <section class="bye-brits__content">
         <div class="bye-brits__content__left">
           <div class="bye-brits__content__image"><img src="{{Image}}"></div>
         </div>
@@ -99,9 +103,7 @@
           <div class="bye-brits__content__name"><h3>{{{Name}}}</h3></div>
           <div class="bye-brits__content__bio"><h4>{{{Bio}}}</h4></div>
           <div class="bye-brits__content__text"><p class="intro">{{{Intro}}}</p><p>{{{Full}}}</p></div>
-          <div class="bye-brits__content__readmore"><a>Read more</a><svg width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5909 19.4091L16.267 35H18.6932L19.4091 19.4091L35 18.6932V16.267L19.4091 15.5909L18.6932 0H16.267L15.5909 15.5909L0 16.267V18.6932L15.5909 19.4091Z" fill="#052962"/>
-            </svg>
-            </div>
+          <div class="bye-brits__content__readmore"><a>Read more</a></div>
         </div>
       </section>
       {{/Sheet1}}

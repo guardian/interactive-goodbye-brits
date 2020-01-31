@@ -1,18 +1,18 @@
 function languages() {
 const languages = [
   '🇸🇪 Hej då',
-  '🇫🇷 Salut',
+  '🇧🇪 Salut',
   '🇮🇹	Arrivederci',
   '🇧🇬	Dovijdane',
   '🇨🇾	Aποχαιρετισμός',
   '🇱🇻	Ardievas',
   '🇸🇰	Do videnia',
   '🇷🇴	La revedere',
-  '🇦🇹	Tschüss',
+  '🇦🇹	Baba',
   '🇪🇸	Adiós',
   '🇸🇮	Zbogom',
   '🇱🇺	Äddi',
-  '🇩🇪	Auf wiedersehen',
+  '🇩🇪	Auf Wiedersehen',
   '🇭🇷	Doviđenja',
   '🇫🇮	Näkemiin',
   '🇬🇷	Aντιο σας',
@@ -25,7 +25,7 @@ const languages = [
   '🇫🇷	Au revoir',
   '🇳🇱	Vaarwel',
   '🇲🇹	Addiju',
-  '🇮🇪	Slán',
+  '🇮🇪	Slan libh',
   '🇩🇰	Farvel',
   '🇪🇺 Goodbye'
 ];
@@ -46,19 +46,27 @@ function readMore(){
   var readMore = document.querySelectorAll('.bye-brits__content__readmore');
   var content = document.querySelectorAll('.bye-brits__content');
   for(var i = 0; i < readMore.length; i++){
-    readMore[i].addEventListener('click', function(){
+    readMore[i].addEventListener('click', function() {
      console.log(this);
      var parent = this.parentNode;
      console.log(this.innerHTML);
      parent.classList.toggle('clicked');
      if(this.innerHTML === '<a>Read more</a>') {
-       this.innerHTML = "<a>Read less</a>";
+         console.log("TRUE")
+       this.innerHTML = '<a>Read less</a>';
      } else {
-       this.innerHTML = "<a>Read more</a>"
+         console.log('FALSE')
+       this.innerHTML = '<a>Read more</a>'
      }
     });
   }
 }
+
+
+
+
+
+
 
 function scroll() {
   var goodbye = document.querySelector('.bye-brits__header__goodbye-brits');
@@ -66,7 +74,7 @@ function scroll() {
   var stickme = document.querySelector('.stickme');
   document.addEventListener('scroll', function(){
     var positionGoodbye = goodbyeTrack.getBoundingClientRect();
-    if(positionGoodbye.top <= -100) {
+    if(positionGoodbye.top <= 0) {
       stickme.classList.add('showme');
     } else {
       stickme.classList.remove('showme');
@@ -74,9 +82,30 @@ function scroll() {
   });
 }
 
+
+const navItem = document.querySelectorAll('.bye-brits__nav__dropdown-item div a')
+const navContent = document.querySelector('.dropdown-content')
+
+function closeNav() {
+    for(var i = 0; i < navItem.length; i++){
+        console.log(navItem[i])
+        navItem[i].addEventListener("click", function() {
+            console.log(navItem[i])
+            navContent.classList.remove('show');
+        })
+    }
+}
+
+
+
 function init(){
   readMore();
   scroll();
   languages();
+  closeNav();
 }
 init();
+
+
+
+

@@ -7,17 +7,29 @@
 // Uncomment for full screen (including immersive article main media)
 // @import "fullscreen";
 
-// Palette
+// color
 $black: #121212;
 $darkBlue:#052962;
 $secondaryBlue:#005689;
-
+$darkerBlue:#041f4a;
+$backgroundGrey:#f6f6f6;
+//font
+$titlepiece:"Guardian Titlepiece","Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
+$headline:"Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
+$textSans:"Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+//border
 $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-small.png');
 
+
+
+
+
 .gs-container {
+    padding-bottom: 50px;
     @include mq(desktop){
-        border: 1px solid transparent;
-        border-image: url('https://uploads.guim.co.uk/2020/01/27/bye-brits-scribble.png') 27 27 27 27 round stretch;
+        padding-bottom: 100px;
+        border: 1px solid white;
+        border-image: $scribbleBorder 27 27 27 27 round stretch;
         border-top:none;
         border-bottom:none;
     }
@@ -28,58 +40,139 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
     background-color: $darkBlue;
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    40% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.big-goodbye {
+    
+    animation: fadeIn 1.5s ease;
+    font-family:$titlepiece;
+    color: #ffe500;
+    position: absolute;
+    z-index: 8;
+    
+    margin-left: 10px;
+    font-size: 70px;
+    margin-top: 429px;
+    @include mq(mobileMedium){
+        font-size: 84px;
+        margin-top: 564px;
+    }
+    @include mq(mobileLandscape){
+        font-size: 109px;
+        margin-top: 285px;
+    }
+    @include mq(phablet){
+        font-size: 152px;
+        margin-top: 416px;
+    }
+    @include mq(tablet){
+        font-size: 167px;
+        margin-top: 709px;
+    }
+    @include mq(desktop){
+        margin-left: calc((100vw - 1024px) / 2 + 20px);
+        font-size: 209px;
+        margin-top: 319px;
+    }
+    @include mq(leftCol){
+        margin-left: calc((100vw - 1140px) / 2 + 20px);
+        font-size: 226px;
+        margin-top: 371px;
+    }
+    @include mq(wide){
+        margin-left: calc((100vw - 1300px) / 2 + 20px);
+        font-size: 280px;
+        margin-top: 349px;
+    }
+}
+
+
+
+.spacer {
+    height: 13px;
+    width:100%;
+    @include mq(tablet){
+        height:20px;
+    }
+    @include mq(wide){
+        height:70px;
+    }
+}
+
 .bye-brits {
+    background-color:$backgroundGrey;
     color:$black;
     &__header {
         background-image:url("https://uploads.guim.co.uk/2020/01/29/newspaper_online_24.png");
-        background-size:160vh;
+        background-size:cover;
         filter: contrast(1.2);
         background-repeat:no-repeat;
-        background-position: center;
+        background-position: center -12px;
+        background-color:$darkBlue;
+
+        width:100%;
+        height:510px;
+        z-index:6;
         @include mq(mobileMedium){
-            background-size:120vh;
+            height:660px;
+        }
+        @include mq(mobileLandscape){
+            height: 410px;
+            background-position: center -17px;
         }
         @include mq(phablet){
-            background-size:130vh;
+            height:590px;
+            background-size:140vh;
+            background-position: center -27px;
+        }
+        @include mq(tablet){
+            height:900px;
         }
         @include mq(desktop){
-            background-size:180vh;
-        }
-        width:100%;
-        background-color:$darkBlue;
-        height:80vh;
-        z-index:10;
-        @include mq(desktop){
-            height:65vh;
+            height:559px;
+            background-size:150vh;
+            background-position: center -147px;
         }
         @include mq(leftCol){
-            height:70vh;
+            background-position:center -107px;
+            background-size:137vh;
+            height: 630px;
         }
         @include mq(wide) {
-            height:70vh;
+            height: 670px;
         }
-        @keyframes skew {
-            0%{
-                transform:skew(0deg, 0deg);
-            }
-            25%{
-                transform:skew(0.5deg, 0.5deg);
-            }
-            50% {
-                transform:skew(0deg, 0deg);
-            }
-            75% {
-                transform:skew(-0.5deg, -0.5deg);
-            }
-            100% {
-                transform:skew(0deg, 0deg);
-            }
-        }
-        animation:skew 5s linear infinite;
+        // @keyframes skew {
+        //     0%{
+        //         transform:skew(0deg, 0deg);
+        //     }
+        //     25%{
+        //         transform:skew(0.5deg, 0.5deg);
+        //     }
+        //     50% {
+        //         transform:skew(0deg, 0deg);
+        //     }
+        //     75% {
+        //         transform:skew(-0.5deg, -0.5deg);
+        //     }
+        //     100% {
+        //         transform:skew(0deg, 0deg);
+        //     }
+        // }
+        // animation:skew 5s linear infinite;
 
 
         &__line {
-            border-top: 1px solid transparent;
+            border-top: 1px solid white;
             border-image: $scribbleBorder 27 27 27 27 round stretch;
             width:calc(100vw - 12px);
             margin-left:0px;
@@ -98,15 +191,15 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
         }
 
         &__goodbye-brits {
-                font-family:"Guardian Titlepiece","Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
+                font-family:$titlepiece;
                 font-size:16vw;
                 line-height: 115%;
                 color:$darkBlue;
-                margin-left:12px;
+                margin-left:0;
                 margin-top:0;
 
                 &.stickme {
-                  background-color: white;
+                  background-color: $backgroundGrey;
                   width: calc(98vw);
                   position: fixed;
                   top: -1px;
@@ -117,12 +210,13 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
                   @include mq(desktop){
                     font-size: 60px;
                   }
-                  padding-bottom: 12px;
+                  padding-top: 3px;
+                  padding-bottom: 0;
                   padding-left: 1%;
                   opacity: 0;
                   z-index: 10;
                   span {
-                      margin-left:0;
+                      margin-left:8px;
                       @include mq(desktop){
                           margin-left:10px;
                       }
@@ -142,7 +236,7 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
     }
 
     &__headline {
-        font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
+        font-family:$headline;
         font-weight:200;
         font-size:20px;
         line-height:115%;
@@ -172,7 +266,7 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
         }
     }
     &__byline {
-        font-family:"Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+        font-family:$textSans;
         color:#999;
         margin-left: 12px;
         margin-top: 17px;
@@ -199,17 +293,25 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
             margin-left: 180px;
         }
     }
-    &__nav {
+    &__nav-wrapper {
+        background-color:$backgroundGrey;
+        width:100%;
+        position:sticky;
+        top:37px;
         padding-top:10px;
-        background-color: white;
+        @include mq(desktop){
+            padding-top:20px;
+            top:60px;
+        }
+    }
+    &__nav {
+        margin-top:10px;
+        background-color: $backgroundGrey;
         z-index: 9;
         margin-left: 12px;
         width:calc(100vw - 24px);
-        position: sticky;
-        top: 38px;
         @include mq(mobileMedium){
-            padding-top: 20px;
-            padding-bottom: 9px;
+            margin-top: 20px;
         }
         @include mq(tablet){
             margin-left: 12px;
@@ -217,7 +319,6 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
         }
         @include mq(desktop){
             margin-left:20px;
-            top: 60px;
             width:860px;
         }
         @include mq(leftCol){
@@ -225,18 +326,17 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
         }
         @include mq(wide) {
             background-color:#fff;
-            padding-top:20px;
-            padding-bottom:10px;
+            margin-top:20px;
             margin-left: 178px;
         }
         &__dropbtn {
-            border: 0.1em solid transparent;
+            border: 0.1em solid white;
             border-image: $scribbleBorder 27 27 27 27 round stretch;
-            font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+            font-family: $textSans;
             font-size: 15px;
             font-weight: 600;
             text-align: left;
-            background-color: white;
+            background-color: $backgroundGrey;
             display: flex;
             justify-content: space-between;
             padding:8px;
@@ -253,7 +353,7 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
                 transform:translateY(3px);
             }
             &__text {
-                border-bottom:1px solid transparent;
+                border-bottom:1px solid white;
                 border-image: $scribbleBorder 27 27 27 27 stretch;
             }
         }
@@ -270,11 +370,11 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
             }
         }
         &__dropdown-item div {
-            border: 1px solid transparent;
+            border: 1px solid white;
             border-image: $scribbleBorder 27 27 27 27 stretch;
             border-top:none;
             padding:8px;
-            background-color:white;
+            background-color:$backgroundGrey;
             a {
                 text-decoration: none;
                 color: #121212;
@@ -293,7 +393,7 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
         &__dropdown-item {
             a:hover {
                 color:$secondaryBlue;
-                border-bottom:1px solid transparent;
+                border-bottom:1px solid white;
                 border-image: $scribbleBorder 27 27 27 27 stretch;
             }
         }
@@ -305,7 +405,6 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
         display: flex;
         flex-direction: column;
         margin-top: 8px;
-        margin-bottom: 38px;
         display:flex;
         flex-direction: column;
         height:auto;
@@ -345,6 +444,9 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
             }
         }
         &__right {
+            @include mq(mobileLandscape){
+                width:260px;
+            }
             @include mq(phablet){
                 width:400px;
             }
@@ -386,19 +488,19 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
             h5 {
                 display:flex;
                 flex-direction: row;
-                font-weight:200;
+                font-weight:600;
                 font-size:20px;
                 line-height:115%;
-                font-style:italic;
             }
         }
         &__name {
             color:$darkBlue;
             h3 {
-                font-family:"Guardian Titlepiece","Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
+                font-family:$titlepiece;
                 font-size:36px;
                 line-height: 105%;
                 margin-top: -1px;
+                
                 @include mq(mobileLandscape){
                     font-size:34px;
                 }
@@ -406,7 +508,11 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
                     font-size:36px;
                 }
                 @include mq(desktop){
+                    width:600px;
                     font-size:50px;
+                }
+                @include mq(wide){
+                    width: 550px;
                 }
             }
         }
@@ -415,27 +521,37 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
             h4{
                 font-weight:200;
                 font-size:20px;
-                font-style:italic;
             }
             @include mq(mobileLandscape){
                 margin-top:-5px;
             }
         }
         &__readmore {
-            border: 1px solid transparent;
+            border: 1px solid white;
+            
             border-image: $scribbleBorder 27 27 27 27 round stretch;
             display: flex;
-            width: 160px;
+            width: 110px;
             justify-content: space-between;
             margin-top:22px;
             a {
                 color:$darkBlue;
-                font-family:"Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+                font-family:$textSans;
                 font-weight:bold;
                 text-decoration:none;
                 margin-top: 4px;
                 margin-bottom: 6px;
                 padding-left: 12px;
+                // &::after {
+                //     content: '';
+                //     background-image: url(https://uploads.guim.co.uk/2020/01/31/plus.svg);
+                //     background-size: cover;
+                //     width: 20px;
+                //     height: 20px;
+                //     position: absolute;
+                //     margin-left: 43px;
+                //     margin-top: 2px;
+                // }
             }
             svg {
                 margin-top:6.5px;
@@ -456,12 +572,15 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
         }
 
         .intro {
-            font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia,serif;
+            font-family: $headline;
             font-weight: 200;
             line-height: 115%;
             font-size: 22px;
             margin-top:20px;
             width: 290px;
+            @include mq(mobileLandscape){
+                width: 264px;
+            }
             @include mq(desktop){
                 width: 460px;
             }
@@ -557,4 +676,25 @@ br {
     text-decoration: none;
   }
 
-  .show {display: block;}
+  .show {
+      display: block;
+      & .bye-brits__nav__dropbtn__downarrow {
+        transform:rotate(180deg);
+        }
+    }
+
+
+  .anchor {
+      height: 50px;
+      &:nth-child(1) {
+          height: 10px;
+      }
+  }
+
+
+
+  .clicked a::after{
+    transform:rotate(45deg);
+    margin-left:50px;
+  }
+
