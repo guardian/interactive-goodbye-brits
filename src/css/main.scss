@@ -25,9 +25,7 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
 
 
 .gs-container {
-    padding-bottom: 50px;
     @include mq(desktop){
-        padding-bottom: 100px;
         border: 1px solid white;
         border-image: $scribbleBorder 27 27 27 27 round stretch;
         border-top:none;
@@ -49,6 +47,13 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
     }
     100% {
         opacity:1;
+    }
+}
+
+.bye-brits__body {
+    padding-bottom: 50px;
+    @include mq(desktop){
+        padding-bottom: 100px;
     }
 }
 
@@ -177,6 +182,9 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
             width:calc(100vw - 12px);
             margin-left:0px;
             margin-top: 12px;
+            @include mq(tablet) {
+                width:100%;
+            }
             @include mq(desktop){
                 margin-top: 20px;
                 margin-left:0;
@@ -315,7 +323,7 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
         }
         @include mq(tablet){
             margin-left: 12px;
-            width: calc(100vw - 24px);
+            width: 100%;
         }
         @include mq(desktop){
             margin-left:20px;
@@ -421,6 +429,9 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
         @include mq(leftCol){
             flex-direction: row;
             margin-left:100px;
+        }
+        @include mq(tablet) {
+            width:unset;
         }
         @include mq(desktop) {
             width: calc(100vw - 120px);
@@ -568,6 +579,18 @@ $scribbleBorder: url('https://uploads.guim.co.uk/2020/01/30/bye-brits-scribble-s
                 &:nth-child(1){
                     display:block;
                 }
+                @include mq(desktop) {
+                    max-width: 530px;
+                }
+                @include mq(desktop) {
+                    max-width: 590px;
+                }
+                @include mq(leftCol) {
+                    max-width: 610px;
+                }
+                @include mq(leftCol) {
+                    max-width: 620px;
+                }
             }
         }
 
@@ -698,3 +721,10 @@ br {
     margin-left:50px;
   }
 
+
+
+  .ios, .android {
+    .meta__extras {
+        display: none !important;
+    }
+  }
